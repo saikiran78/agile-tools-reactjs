@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {AuthContext} from './Auth';
+import app from 'firebase';
 
 const Home = () => {
+
+	const {currentUser} = useContext(AuthContext);
+
 	return (
 		<div>
-			Welcome to the Agile tools
+			<h3>Welcome {currentUser ? currentUser.email : ''}</h3>
+			<button onClick={() => app.auth().signOut()}>Sign out</button>
 		</div>
 	)
 }
