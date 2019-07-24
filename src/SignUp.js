@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 import app from 'firebase';
 
 const SignUp = ({history}) => {
@@ -36,6 +36,8 @@ const SignUp = ({history}) => {
 				<br/>
 				<button type="submit">Sign up</button>
 			</form>
+			<br/>
+			<Link to="/login">Existising User</Link>
 		</div>
 	);
 }

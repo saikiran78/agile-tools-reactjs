@@ -1,6 +1,6 @@
 import React, {useCallback, useContext} from 'react';
 import app from 'firebase';
-import {Redirect, withRouter} from 'react-router-dom';
+import {Redirect, withRouter, Link} from 'react-router-dom';
 
 import {AuthContext} from './Auth';
 
@@ -14,7 +14,7 @@ const Login = ({history}) => {
 
 			try {
 				await app.auth().signInWithEmailAndPassword(email.value, password.value);
-				history.push("/");
+				history.push('/');
 			}
 			catch(error) {
 				alert(error);
@@ -41,6 +41,8 @@ const Login = ({history}) => {
 					<input type="password" name="password" placeholder="Enter password" />
 				</label><br/><br/>
 				<button type="submit">Login</button>
+				<br/><br/>
+				<Link to="/signup">Sign up</Link>
 			</form>
 		</div>
 	);
