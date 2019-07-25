@@ -7,7 +7,6 @@ import AppContainer from './AppContainer';
 const App = () => {
   return (
 	  <AuthProvider>
-		<h1>Agile tools</h1>
 		<AppContainer></AppContainer>
 	</AuthProvider>
   );
