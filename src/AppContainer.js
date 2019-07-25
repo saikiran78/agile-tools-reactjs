@@ -7,8 +7,8 @@ import Home from './Home';
 import Login from './Login';
 import SignUp from './SignUp';
 import PrivateRoute from './PrivateRoute';
-import PlanningPokerHome from './PlanningPokerHome';
-import RetroBoardHome from './RetroBoardHome'; 
+import PlanningPokerHome from './PlanningPoker/PlanningPokerHome';
+import RetroBoardHome from './RetroBoard/RetroBoardHome'; 
 
 const AppContainer = () => {
 

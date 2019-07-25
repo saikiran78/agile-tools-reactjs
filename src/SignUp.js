@@ -21,23 +21,39 @@ const SignUp = ({history}) => {
 	}, [history]);
 
 	return (
-		<div>
-			<h2>Sign Up</h2>
-			<form onSubmit={handleSignUp}>
-				<label>
-					Email:
-					<input type="email" name="email" placeholder="Email" />
-				</label>		
-				<label>
-					Password:
-					<input type="password" name="password" placeholder="Password" />
-				</label>
-				<br/>
-				<br/>
-				<button type="submit">Sign up</button>
-			</form>
-			<br/>
-			<Link to="/login">Existising User</Link>
+		<div className="container signup">
+			<div className="row justify-content-center">
+				<div className="col-sm-6">
+					<div className="card">
+						<div className="card-header">Sign Up</div>
+						<div className="card-body">
+						<form onSubmit={handleSignUp}>
+							{/* <div class="row">
+								<div class="col-xs-6 col-md-6 form-group">
+									<input type="text" name="firstname" class="form-control input-lg" placeholder="First Name"  />    
+								</div>
+								<div class="col-xs-6 col-md-6 form-group">
+									<input type="text" name="lastname" class="form-control input-lg" placeholder="Last Name"  />
+								</div>
+							</div> */}
+							<div className="form-group">
+								<input type="email" className="form-control" name="email" placeholder="Email" />
+							</div>
+							<div className="form-group">
+								<input type="password" className="form-control" name="password" placeholder="Password" />
+							</div>
+							{/* <div className="form-group">
+								<input type="password" className="form-control" name="confirmpassword" placeholder="Confirm Password" />
+							</div> */}
+							<button type="submit" className="btn btn-success float-right">Sign up</button>
+						</form>
+						</div>
+						<div className="card-footer">
+							Already registered? <Link to="/login">Login here</Link>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 }

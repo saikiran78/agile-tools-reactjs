@@ -29,21 +29,28 @@ const Login = ({history}) => {
 	}
 
 	return(
-		<div>
-			<h2>Login</h2>
-			<form onSubmit={handleLogin}>
-				<label>
-					Email:
-					<input type="email" name="email" placeholder="Enter email" />
-				</label>
-				<label>
-					Password:
-					<input type="password" name="password" placeholder="Enter password" />
-				</label><br/><br/>
-				<button type="submit">Login</button>
-				<br/><br/>
-				<Link to="/signup">Sign up</Link>
-			</form>
+		<div className="container login">
+			<div className="row justify-content-center">
+				<div className="col-sm-6">
+					<div className="card">
+						<div className="card-header">Sign In</div>
+						<div className="card-body">
+						<form onSubmit={handleLogin}>
+							<div className="form-group">
+								<input type="email" className="form-control" name="email" placeholder="Enter email" />
+							</div>
+							<div className="form-group">
+								<input type="password" className="form-control" name="password" placeholder="Enter password" />
+							</div>
+							<button type="submit" className="btn btn-success float-right">Login</button>
+						</form>
+						</div>
+						<div className="card-footer">
+							Don't have an account? <Link to="/signup">Signup here</Link>		
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 }
