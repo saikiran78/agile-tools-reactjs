@@ -34,6 +34,7 @@ class SignUp extends React.Component {
 	handleSignUp(event) {
 		event.preventDefault();
 		const history = this.props.history; 
+		const db = app.firestore();
 
 		if(this.validateForm()) {
 			this.setState({
@@ -50,8 +51,19 @@ class SignUp extends React.Component {
 		
 			app.auth()
 				.createUserWithEmailAndPassword(this.state.fields.email, this.state.fields.password)
-				.then(() => {
-					history.push("/");
+				.then(({user}) => {
+					db.collection("users").doc(user.uid).set({
+						firstname: this.state.fields.firstName,
+						lastname: this.state.fields.lastName,
+						email: this.state.fields.email
+					})
+					.then((documentRef) => {
+						history.push("/");
+					})
+					.catch((error) => {
+						alert("error creating user information:" + error);
+					});
+					
 				})
 				.catch (error => {
 					alert(error);

@@ -32,7 +32,9 @@ const AppContainer = () => {
 							</ul>
 							<form className="form-inline my-2 my-lg-0">
 								<span className="text-white mr-sm-2">
-									Welcome {currentUser.email}
+									Welcome {currentUser.userInfo 
+												? currentUser.userInfo.firstname + ' ' + currentUser.userInfo.lastname
+												: currentUser.email} 
 								</span>
 								<button className="btn btn-success my-2 my-sm-0" onClick={() => app.auth().signOut()}>Logout</button>
 							</form>
