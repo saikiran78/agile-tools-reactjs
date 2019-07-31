@@ -21,7 +21,7 @@ export const AuthProvider = ({children}) => {
 						alert("unable to read user information");
 					}
 				}).catch(function(error) {
-					console.log("Error getting document:", error);
+					alert.log("Error getting document:", error);
 				});
 			}
 		});

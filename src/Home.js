@@ -82,6 +82,21 @@ class Home extends React.Component {
 
 	}
 
+	getMeetingType(meetingType) {
+		let displayName;
+		switch(meetingType) {
+			case 'planning':
+				displayName = 'Planning';
+				break;
+			case 'retro': 
+				displayName = 'Retrospect';
+				break;
+			default:
+				displayName = 'Planning';
+		}
+		return displayName;
+	}
+
 	componentDidMount() {
 		const {currentUser} = this.context;
 		const db = app.firestore();
@@ -112,14 +127,21 @@ class Home extends React.Component {
 					</thead>
 					<tbody>
 						{
+							!this.state.recentMeetings.length
+							?
+							<tr>
+								<td colSpan="4">No meeting available</td>
+							</tr>
+							:
+							this.state.recentMeetings.length
+							&&
 							this.state.recentMeetings.map((meeting) => {
 
 								let docData = meeting.data();
-								console.log(docData);
 								return(<tr key={meeting.id}>
 									<td>{docData.title}</td>
 									<td>{docData.team}</td>
-									<td>{docData.meetingType}</td>
+									<td>{this.getMeetingType(docData.meetingType)}</td>
 									<td>{docData.createDate.toDate().toDateString()} {docData.createDate.toDate().toLocaleTimeString()}</td>
 								</tr>)
 							})
