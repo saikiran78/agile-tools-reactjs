@@ -13,3 +13,25 @@
 .planning-poker {
 	margin: 20px;
 }
+
+.pointed-card {
+	background-color: #484343;
+
+	width: 50px;
+	height: 75px;
+	border: #484343 1px solid;
+	font-size: 40px;
+	border-radius: 10px;
+	margin: 5px;
+}
+
+.notpointed-card {
+	background-color: #76d276;
+
+	width: 50px;
+	height: 75px;
+	border: #484343 1px solid;
+	font-size: 40px;
+	border-radius: 10px;
+	margin: 5px;
+}

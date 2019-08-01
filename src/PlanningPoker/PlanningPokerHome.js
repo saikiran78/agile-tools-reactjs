@@ -23,7 +23,7 @@ class PlanningPokerHome extends React.Component {
 	}
 
 	componentWillMount() {
-		const {currentUser} = this.context;
+		//const {currentUser} = this.context;
 		const { match: { params } } = this.props;
 		const db = app.firestore();
 		db.collection("planning").doc(params.planningId)
