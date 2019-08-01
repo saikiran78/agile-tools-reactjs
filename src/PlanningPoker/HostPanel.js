@@ -3,7 +3,7 @@ import React from 'react';
 class HostPanel extends React.Component {
 	render() {
 		return(
-			<div className="container card">
+			<div className="container card mb-3">
 				<div className="card-body">
 					<h5 className="card-title">Scrum master</h5>
 					<h6 className="card-subtitle mb-2 text-muted">Add the topics or user stories for the planning</h6>
@@ -63,13 +63,13 @@ class HostPanel extends React.Component {
 									</li>
 								</ul>
 								<div className="d-block">
-									<button className="btn btn-outline-warning btn-sm mr-1">1</button>
-									<button className="btn btn-outline-warning btn-sm mr-1">2</button>
-									<button className="btn btn-outline-warning btn-sm mr-1">3</button>
-									<button className="btn btn-outline-warning btn-sm mr-1">5</button>
-									<button className="btn btn-outline-warning btn-sm mr-1">8</button>
-									<button className="btn btn-outline-warning btn-sm mr-1">13</button>
-									<button className="btn btn-outline-warning btn-sm mr-1">20</button>
+									<button className="btn btn-outline-warning btn-sm mr-1 mb-1">1</button>
+									<button className="btn btn-outline-warning btn-sm mr-1 mb-1">2</button>
+									<button className="btn btn-outline-warning btn-sm mr-1 mb-1">3</button>
+									<button className="btn btn-outline-warning btn-sm mr-1 mb-1">5</button>
+									<button className="btn btn-outline-warning btn-sm mr-1 mb-1">8</button>
+									<button className="btn btn-outline-warning btn-sm mr-1 mb-1">13</button>
+									<button className="btn btn-outline-warning btn-sm mr-1 mb-1">20</button>
 								</div>
 							</div>
 						</li>

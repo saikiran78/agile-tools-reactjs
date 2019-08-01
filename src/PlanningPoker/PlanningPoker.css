@@ -1,0 +1,33 @@
+.planning-poker {
+	margin: 20px;
+}
+
+.demo-card {
+	width: 50px;
+	height: 75px;
+}
+
+.point-card {
+	width: 120px;
+	height: 170px;
+	margin: 10px;
+}
+
+.point-card h5 {
+	padding: 5px 0 5px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.pointed {
+	background-color: #76d276 !important;
+}
+
+.not-pointed {
+	background-color: #484343 !important;
+	color: white;
+}
+
+.points {
+	font-size: 45px;
+	
+}

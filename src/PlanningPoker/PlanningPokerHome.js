@@ -7,6 +7,7 @@ import Participants from './Participants';
 import HostPanel from './HostPanel';
 import ParticipantPanel from './ParticipantPanel';
 import ChickenPanel from './ChickenPanel';
+import './PlanningPoker.css';
 
 class PlanningPokerHome extends React.Component {
 	static contextType = AuthContext;
