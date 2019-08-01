@@ -31,7 +31,7 @@ class PlanningTable extends React.Component {
 
 					<div className="row">
 						<div className="col-sm-2 participant-points">
-							<p>Jay Warling</p>
+							<p>Jay</p>
 							<div className="card">
 								<span className="points">
 									0
@@ -39,7 +39,7 @@ class PlanningTable extends React.Component {
 							</div>
 						</div>
 						<div className="col-sm-2 participant-points">
-							<p>Kris Aksdal</p>
+							<p>Kris</p>
 							<div className="card">
 								<span className="points">
 									0
@@ -47,7 +47,7 @@ class PlanningTable extends React.Component {
 							</div>
 						</div>
 						<div className="col-sm-2 participant-points">
-							<p>Saikiran Sheshagiri</p>
+							<p>Saikiran</p>
 							<div className="card">
 								<span className="points">
 									0
@@ -55,7 +55,7 @@ class PlanningTable extends React.Component {
 							</div>
 						</div>
 						<div className="col-sm-2 participant-points">
-							<p>Arthi Shivakumar</p>
+							<p>Arthi</p>
 							<div className="card">
 								<span className="points">
 									0
@@ -63,7 +63,7 @@ class PlanningTable extends React.Component {
 							</div>
 						</div>
 						<div className="col-sm-2 participant-points">
-							<p>Ashish Mahajan</p>
+							<p>Ashish</p>
 							<div className="card">
 								<span className="points">
 									0
@@ -71,7 +71,7 @@ class PlanningTable extends React.Component {
 							</div>
 						</div>
 						<div className="col-sm-2 participant-points">
-							<p>Jorge Baeza</p>
+							<p>Jorge</p>
 							<div className="card">
 								<span className="points">
 									0

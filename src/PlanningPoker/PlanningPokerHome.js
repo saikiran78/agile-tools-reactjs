@@ -6,6 +6,7 @@ import PlanningTable from './PlanningTable'
 import Participants from './Participants';
 import HostPanel from './HostPanel';
 import ParticipantPanel from './ParticipantPanel';
+import ChickenPanel from './ChickenPanel';
 
 class PlanningPokerHome extends React.Component {
 	static contextType = AuthContext;
@@ -52,12 +53,13 @@ class PlanningPokerHome extends React.Component {
 				</div>			
 				<hr />
 				<div className="row">
-					<div className="col-sm-8">
+					<div className="col-sm-9">
 						<PlanningTable></PlanningTable>
 						<HostPanel></HostPanel>
 						<ParticipantPanel></ParticipantPanel>
+						<ChickenPanel></ChickenPanel>
 					</div>
-					<div className="col-sm-4">
+					<div className="col-sm-3">
 						<Participants></Participants>
 					</div>
 				</div>
