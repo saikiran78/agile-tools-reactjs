@@ -62,6 +62,7 @@ class Home extends React.Component {
 		} else {
 			const {currentUser} = this.context;
 			const db = app.firestore();
+			const history = this.props.history;
 			db.collection("planning").add({
 				title: this.state.fields.title,
 				team: this.state.fields.team,
@@ -74,6 +75,10 @@ class Home extends React.Component {
 				this.setState({
 					show: false
 				});
+
+				this.state.fields.meetingType === "planning"
+				? history.push("/planning/" + documentRef.id)
+				: history.push("/retro/" + documentRef.id)
 			})
 			.catch((error) => {
 				alert("error creating meeting information:" + error);

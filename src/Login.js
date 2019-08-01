@@ -4,7 +4,7 @@ import {Redirect, withRouter, Link} from 'react-router-dom';
 
 import {AuthContext} from './Auth';
 
-const Login = ({history}) => {
+const Login = ({location, history}) => {
 
 	const handleLogin = useCallback(
 		async event => {
@@ -14,7 +14,7 @@ const Login = ({history}) => {
 
 			try {
 				await app.auth().signInWithEmailAndPassword(email.value, password.value);
-				history.push('/');
+				history.goBack();
 			}
 			catch(error) {
 				alert(error);
@@ -23,9 +23,11 @@ const Login = ({history}) => {
 	, [history]);
 
 	const {currentUser} = useContext(AuthContext);
+	console.log(location.state);
+	let { from } = location.state || { from: { pathname: "/" } };
 
 	if(currentUser) {
-		return (<Redirect to="/" />);
+		return (<Redirect to={from.pathname} />);
 	}
 
 	return(

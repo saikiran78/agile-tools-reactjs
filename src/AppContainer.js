@@ -45,7 +45,7 @@ const AppContainer = () => {
 			<Switch>
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/signup" component={SignUp} />
-					<PrivateRoute exact path="/planning" component={PlanningPokerHome} />
+					<PrivateRoute exact path="/planning/:planningId" component={PlanningPokerHome} />
 					<PrivateRoute exact path="/retro" component={RetroBoardHome}/>
 					
 					<PrivateRoute exact path="/" component={Home} />
