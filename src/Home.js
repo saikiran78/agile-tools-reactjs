@@ -70,7 +70,17 @@ class Home extends React.Component {
 				accessCode: this.state.fields.accessCode,
 				hostId: currentUser.uid,
 				meetingType: this.state.fields.meetingType,
-				createDate: firebase.firestore.Timestamp.now()
+				createDate: firebase.firestore.Timestamp.now(),
+				participants: firebase.firestore.FieldValue.arrayUnion(
+					{
+						firstName: currentUser.userInfo.firstname,
+						lastName: currentUser.userInfo.lastname,
+						isActive: true,
+						isChicken: false,
+						isHost: true,
+						uid: currentUser.uid
+					}
+				)
 			})
 			.then((documentRef) => {
 				this.setState({
