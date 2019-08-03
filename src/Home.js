@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -121,7 +122,7 @@ class Home extends React.Component {
 				<Button variant="success" onClick={this.handleShow}>Start a new meeting</Button>
 				<hr/>
 				<h4>Recent meetings</h4>
-				<table className="table">
+				<table className="table table-hover">
 					<thead>
 						<tr>
 							<th>Title</th>
@@ -144,7 +145,13 @@ class Home extends React.Component {
 
 								let docData = meeting.data();
 								return(<tr key={meeting.id}>
-									<td>{docData.title}</td>
+									<td>
+										<Link to={{
+											pathname: `/planning/${meeting.id}`,
+											state: {
+												from: this.props.location
+											}
+										}}>{docData.title}</Link></td>
 									<td>{docData.team}</td>
 									<td>{this.getMeetingType(docData.meetingType)}</td>
 									<td>{docData.createDate.toDate().toDateString()} {docData.createDate.toDate().toLocaleTimeString()}</td>
