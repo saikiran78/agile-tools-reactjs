@@ -115,19 +115,24 @@ class Home extends React.Component {
 
 	componentDidMount() {
 		const {currentUser} = this.context;
-		const db = app.firestore();
-		db.collection("planning").where("hostId", "==", currentUser.uid)
-			.onSnapshot((querySnapshot) => {
-				let recentMeetings = [];
-				querySnapshot.forEach(function(doc) {
-					recentMeetings.push(doc);
-				})
-				this.setState({recentMeetings});
-			});
+		if(currentUser.uid) {
+			const db = app.firestore();
+			db.collection("planning").where("hostId", "==", currentUser.uid)
+				.onSnapshot((querySnapshot) => {
+					let recentMeetings = [];
+					querySnapshot.forEach(function(doc) {
+						recentMeetings.push(doc);
+					})
+					this.setState({recentMeetings});
+				});
+		}
 	}
 
 	render() {
+		const {currentUser} = this.context;
 		return (
+			currentUser.uid 
+			?
 			<div className="container home">
 				<Button variant="success" onClick={this.handleShow}>Start a new meeting</Button>
 				<hr/>
@@ -244,6 +249,8 @@ class Home extends React.Component {
 					</Modal.Footer>
 				</Modal>
 			</div>
+			:
+			null
 		)
 	}
 }
